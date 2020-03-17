@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="img/hero/zenith-favicon.png"
+    />
+    <title>Zenith</title>
+  </head>
+  <body>
+    <header class="hero">
+      <img src="img/hero/zenith-logo.png" alt="Zenith Logo" class="logo" />
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Integrations</a></li>
+          <li class="__get-zenith"><a href="#">Get Zenith</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <img src="img/hero/hamburger.svg" alt="menu toggle" />
+      </label>
+    </header>
+
+    <main class="content">
+      <h1>All your communication. <span>One Place.</span></h1>
+      <img class="__card" src="img/hero/inbound-card.png" alt="" />
+    </main>
+
+    <section class="features">
+      <h1>The features that matter</h1>
+      <aside class="__content">
+        <div class="__card">
+          <h3>Mark all your completed threads in one place</h3>
+          <img src="img/features/features-checkboxes.png" alt="" />
+        </div>
+        <div class="__card">
+          <h3>Mark all your completed threads in one place</h3>
+          <img src="img/features/features-integrations.png" alt="" />
+        </div>
+        <div class="__card">
+          <h3>Mark all your completed threads in one place</h3>
+          <img src="img/features/features-notifications.png" alt="" />
+        </div>
+      </aside>
+      <img class="__dashboard" src="img/features/zenith-dasboard.png" alt="" />
+    </section>
+
+    <section class="integrations">
+      <h1>Your favorite products finally together</h1>
+      <div class="__products">
+        <div class="slack columns">
+          <img src="img/integrations/slack-full.png" alt="" />
+        </div>
+        <div class="trello box columns">
+          <img src="img/integrations/trello.png" alt="" />
+        </div>
+        <div class="google columns">
+          <img src="img/integrations/google.png" alt="" />
+        </div>
+        <div class="jira box columns">
+          <img src="img/integrations/jira.png" alt="" />
+        </div>
+        <div class="asana">
+          <img src="img/integrations/asana.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <h2>Stay up to date</h2>
+        <form>
+          <div class="name field">
+            <input placeholder="Name" min="5" max="32" id="name"/>
+          </div>
+          <div class="email_address field">
+            <input placeholder="Email address" id="email" required/>
+          </div>
+          <div class="select_list field">
+            <select class="select_ref" name="reference" id="reference">
+              <option class="placeholder" value="" disabled selected hidden>Where did you hear about us?</option>
+              <option value="in_store_kiosk">In-Store Kiosk</option>
+              <option value="conference">Trade Conference</option>
+              <option value="publication">Magazine/Newspaper</option>
+              <option value="sm_advert">Social Media Ad</option>
+              <option value="other">Elsewhere</option>
+            </select>
+          </div>
+          <button>Sign Up</button>
+        </form>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Policies</a></li>
+          <li><a href="#">Privacy & Terms</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

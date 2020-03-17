@@ -1,0 +1,570 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+:root {
+  --main: rgba(135, 26, 255, 1);
+  --comp: rgba(65, 77, 255, 1);
+  --light: rgba(255, 255, 255, 1);
+  --dark: rgba(57, 57, 57, 1);
+  --button: linear-gradient(196.2deg, #ab00ff -34.29%, #007bff 136.11%);
+}
+
+@font-face {
+  src: url(fonts/futura-book.ttf);
+  font-family: book;
+}
+@font-face {
+  src: url(fonts/futura-heavy.ttf);
+  font-family: heavy;
+}
+p {
+  font-family: book;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: heavy;
+  letter-spacing: 0.5px;
+}
+
+.hero {
+  padding-bottom: 10px;
+}
+.hero .__get-zenith {
+  display: flex;
+  margin: auto;
+  width: 167px;
+  height: 48px;
+  cursor: pointer;
+  background: var(--button);
+  border-radius: 100px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.24);
+}
+.hero .__get-zenith a {
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+header {
+  background-color: var(--light);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  width: 160px;
+  margin-left: 15px;
+  margin-top: 45px;
+}
+
+nav {
+  background-color: var(--light);
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+nav li {
+  margin-bottom: 1em;
+}
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: heavy;
+  letter-spacing: 1.5625px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+nav a :hover {
+  color: var(--comp);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 150ms;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+.nav-toggle-label img {
+  position: absolute;
+  top: 61px;
+  width: 37px;
+  height: 12px;
+}
+
+.content {
+  padding: 15px;
+  padding-top: 187px;
+  height: 812px;
+  background-image: url(img/backgrounds/hero-bg-texture.png);
+  background-size: 609px 481px;
+  background-position: center;
+  background-position-y: 189px;
+  background-repeat: no-repeat;
+}
+.content h1 {
+  color: var(--dark);
+  line-height: 32px;
+  font-size: 24px;
+  width: 290px;
+}
+.content h1 span {
+  display: flex;
+}
+.content img {
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.25);
+  margin-top: 80px;
+}
+
+.features {
+  padding: 15px;
+}
+.features h1 {
+  color: var(--comp);
+  text-align: center;
+  margin-bottom: 80px;
+}
+.features .__content {
+  display: flex;
+  flex-direction: column;
+}
+.features .__card {
+  background-color: var(--light);
+  width: 345px;
+  height: 105px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 21px;
+  border-radius: 7px;
+  padding: 25px;
+}
+.features .__card h3 {
+  font-family: book;
+  padding-right: 48px;
+  color: var(--dark);
+}
+.features .__card img {
+  width: 16px;
+}
+.features .__dashboard {
+  margin-top: 80px;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.25);
+}
+
+.integrations {
+  padding: 15px;
+}
+.integrations h1 {
+  padding-left: 34px;
+  padding-right: 34px;
+  padding-top: 200px;
+  padding-bottom: 83px;
+  line-height: 32px;
+  background: -webkit-linear-gradient(var(--main), var(--comp));
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-position: center;
+  -webkit-text-fill-color: transparent;
+}
+.integrations .__products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "slack trello" "google jira" "asana asana";
+}
+.integrations .__products .box {
+  display: flex;
+  margin-bottom: 40px;
+  justify-content: flex-end;
+}
+.integrations .__products .slack {
+  grid-area: slack;
+}
+.integrations .__products .slack img {
+  width: 115px;
+}
+.integrations .__products .trello {
+  grid-area: trello;
+}
+.integrations .__products .trello img {
+  width: 115px;
+}
+.integrations .__products .google {
+  grid-area: google;
+}
+.integrations .__products .google img {
+  width: 115px;
+}
+.integrations .__products .jira {
+  grid-area: jira;
+}
+.integrations .__products .jira img {
+  width: 115px;
+}
+.integrations .__products .asana {
+  grid-area: asana;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.integrations .__products .asana img {
+  width: 115px;
+}
+
+footer {
+  padding-top: 33px;
+  background: linear-gradient(229.93deg, var(--main) -21.91%, var(--comp) 133.89%);
+}
+footer h2 {
+  text-align: center;
+  color: var(--light);
+  padding-bottom: 30px;
+}
+footer form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer form .select_list {
+  display: none;
+}
+footer form .field input {
+  width: 211px;
+  height: 35px;
+  border-radius: 34.5px;
+  border: none;
+  background: linear-gradient(181.91deg, #ab00ff -435.58%, #007bff 853.02%);
+}
+footer form .select_list {
+  background: linear-gradient(181.17deg, #ab00ff -435.58%, #007bff 853.02%);
+  border-radius: 34.5px;
+  margin-top: 7.5px;
+  width: 482px;
+}
+footer form .select_list .select_ref {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5;
+  width: 468px;
+  margin: auto;
+  height: 49px;
+  background: transparent;
+  border: none;
+}
+footer form .name {
+  display: none;
+}
+footer form .name #name::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: bold;
+  padding-left: 12px;
+}
+footer form .email_address #email::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: bold;
+  padding-left: 12px;
+}
+footer form .select_ref {
+  display: none;
+}
+footer form button {
+  background: var(--light);
+  border-radius: 34.5px;
+  width: 118px;
+  height: 35px;
+  color: var(--comp);
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.menu ul {
+  padding-top: 232px;
+  padding-bottom: 39px;
+}
+.menu ul li {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  line-height: 30px;
+  list-style-type: none;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: var(--light);
+  text-transform: uppercase;
+  font-family: book;
+  font-size: 10px;
+  letter-spacing: 1.04167px;
+  text-align: right;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 500px) {
+  .integrations .__products {
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "slack trello asana jira google";
+  }
+  .integrations h1 {
+    margin: auto;
+    font-size: 48px;
+    width: 624px;
+    line-height: 64px;
+  }
+  .integrations .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .integrations .columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .integrations .slack {
+    grid-area: slack;
+  }
+  .integrations .slack img {
+    width: 163px;
+  }
+  .integrations .trello {
+    grid-area: trello;
+  }
+  .integrations .trello img {
+    width: 163px;
+  }
+  .integrations .google {
+    grid-area: google;
+  }
+  .integrations .google img {
+    width: 163px;
+  }
+  .integrations .jira {
+    grid-area: jira;
+  }
+  .integrations .jira img {
+    width: 163px;
+  }
+  .integrations .asana {
+    grid-area: asana;
+  }
+  .integrations .asana img {
+    width: 163px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .content {
+    background-position-y: 179px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 1031px;
+  }
+  .content h1 {
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: 1px;
+    margin-left: 15px;
+    width: 300px;
+  }
+
+  .__content .__card {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 764px;
+  }
+
+  footer form {
+    flex-direction: column;
+  }
+  footer form .field input {
+    width: 482px;
+    height: 49px;
+    margin: 7.5px;
+  }
+  footer form .name {
+    display: flex;
+  }
+  footer form .select_list {
+    display: flex;
+  }
+  footer form .select_ref {
+    display: flex;
+  }
+  footer form button {
+    margin-top: 15px;
+  }
+  footer .menu {
+    margin-right: 129px;
+    padding-bottom: 39px;
+  }
+
+  footer h2 {
+    padding-top: 80px;
+    padding-bottom: 38px;
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+  }
+  .hero .logo {
+    margin-top: 0;
+  }
+  .hero .__get-zenith {
+    display: flex;
+    margin-left: 13px;
+    width: 167px;
+    height: 48px;
+    background: var(--button);
+    border-radius: 100px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.24);
+  }
+  .hero .__get-zenith a {
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  nav {
+    all: unset;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  nav ul {
+    display: flex;
+    align-items: center;
+  }
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+  nav a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: var(--theme1);
+    position: absolute;
+    top: 1.4em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(img/backgrounds/hero-bg-cards.png), url(img/backgrounds/hero-bg-texture.png);
+    background-position: center;
+    background-position-y: 245px, 179px;
+    background-repeat: no-repeat;
+    background-size: 100% 780px, 100% 780px;
+    height: 1031px;
+  }
+  .content h1 {
+    width: 717px;
+    margin-left: 130px;
+    position: absolute;
+    left: 0;
+  }
+  .content .__card {
+    margin-top: 219px;
+    max-width: 764px;
+  }
+
+  .features h1 {
+    font-size: 48px;
+    margin-bottom: 150px;
+  }
+  .features .__content {
+    display: flex;
+    flex-direction: row;
+  }
+  .features .__content .__card {
+    max-width: 331px;
+    margin-bottom: 150px;
+  }
+  .features .__dashboard {
+    display: flex;
+    margin: auto;
+    max-width: 1180px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
